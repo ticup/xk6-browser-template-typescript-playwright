@@ -13,7 +13,7 @@ This repository template is an extention to the <a href="https://github.com/graf
 * End-to-end testing using <a href="https://playwright.dev/"> Playwright </a>
 * Load, smoke, stress and soak testing using <a href="https://k6.io/docs/"> k6 </a> and <a href="https://k6.io/docs/javascript-api/xk6-browser/"> xk6-browser </a>
 
-Because xk6-browser roughly adheres to Playwright's browser API, this enables you to share page actions and logic between the two, drastically reducing duplication.
+Because xk6-browser roughly adheres to Playwright's browser API, this enables you to share page actions and logic between the two, drastically reducing duplication. By using Typescript you have better autocomplete DX, tests are better maintainable and you can us async/await, which is not supported by k6 by default.
 
 
 
