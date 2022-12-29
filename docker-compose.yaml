@@ -1,0 +1,7 @@
+version: '3.4'
+
+services:
+  xk6-browser:
+    build: .
+    volumes:
+      - ./dist:/dist
