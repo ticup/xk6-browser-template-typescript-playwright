@@ -6,7 +6,7 @@
 <h1 align="center">
 End-to-end and Load Testing Monorepo
 <br>
- xk6-browser + Playwright + Typescript
+ Playwright + xk6-browser + Typescript
 </h1>
 
 This repository template is an extention to the <a href="https://github.com/grafana/k6-template-typescript"> Typescript template </a> and creates a <a href="https://www.typescriptlang.org/"> Typescript </a> monorepo that includes:
