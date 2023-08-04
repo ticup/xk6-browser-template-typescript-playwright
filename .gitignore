@@ -6,3 +6,4 @@ dist
 /playwright/.cache/
 .bin/
 .DS_Store
+.project

@@ -1,6 +1,6 @@
 import { check } from 'k6';
 import { Options } from 'k6/options';
-import { chromium } from 'k6/x/browser';
+import { chromium } from 'k6/experimental/browser';
 import { clickCheckboxOnk6 } from '@pages/example-page';
 
 
@@ -11,7 +11,7 @@ export let options: Options = {
 
 export default async function () {
     const browser = chromium.launch({
-        headless: true
+        headless: true, args: ['no-sandbox']
     });
     const context = browser.newContext();
     const page = context.newPage();
