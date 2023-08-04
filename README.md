@@ -31,7 +31,7 @@ Because xk6-browser roughly adheres to Playwright's browser API, this enables yo
 ```Typescript
 import { check } from 'k6';
 import { Options } from 'k6/options';
-import { chromium } from 'k6/x/browser';
+import { chromium } from 'k6/experimental/browser';
 import { clickCheckboxOnk6 } from '@pages/example-page';
 
 
@@ -42,7 +42,7 @@ export let options: Options = {
 
 export default async function () {
     const browser = chromium.launch({
-        headless: true
+        headless: true, args: ['no-sandbox']
     });
     const context = browser.newContext();
     const page = context.newPage();
@@ -111,7 +111,7 @@ This command does the following things:
 * Runs the provided transpiled test with k6 using the Dockerfile and docker-compose, which will mount the `./dist` folder to `/dist`, making the tests in there available for the container.
 
 ### Assumptions
-- The tests need to have the "_test_" word in the name to distinguish them from auxiliary files. You can change the entry [here](./webpack.config.js#L8). 
+- The tests need to have the "_test_" word in the name to distinguish them from auxiliary files. You can change the entry [here](./webpack.config.js#L8).
 - If static files are required then add them to `./assets` folder. Its content gets copied to the destination folder (`dist`) along with compiled scripts.
 
 ## Running Playwright tests
