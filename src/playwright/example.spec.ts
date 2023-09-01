@@ -1,10 +1,6 @@
-import { test, expect } from '@playwright/test';
-import { clickCheckboxOnk6 } from '../pages/example-page';
+import { test } from '@fixtures/pages.fixtures';
 
-test('checkbox should have been clicked', async ({ page }) => {
-  await clickCheckboxOnk6(page);
-
-  const checkBox = page.locator('#checkbox-info-display');
-
-  await expect(checkBox).toHaveText('Thanks for checking the box');
+test('checkbox should have been clicked', async ({ mainPage }) => {
+  await mainPage.clickCheckboxOnk6();
+  await mainPage.verifyCheckboxText('Thanks for checking the box');
 });

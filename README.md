@@ -98,17 +98,26 @@ Clone the generated repository on your local machine, move to the project root f
 $ npm i
 ```
 
+### Install playwright
+
+Execute command below to install  playwright with browser engines (chromium, firefox, webkit)
+
+```bash
+$ npx playwright-core install
+```
+
 ## Running k6 tests
 
 To run a k6 test:
 
 ```bash
-$ npm run k6 dist/k6/example-test.js
+$ npm run k6 /dist/k6/example-test.js
 ```
 
 This command does the following things:
 * Transpiles the Typescript files from `./src` to Javascript test files in the `./dist` folder using `Babel` and `Webpack` (you can also do this separately using `npm run build`). [Learn more](https://k6.io/docs/using-k6/modules#bundling-node-modules)
 * Runs the provided transpiled test with k6 using the Dockerfile and docker-compose, which will mount the `./dist` folder to `/dist`, making the tests in there available for the container.
+* Runs executed with option `--insecure-skip-tls-verify` [insecure skip TLS verify](https://k6.io/docs/using-k6/k6-options/reference/#insecure-skip-tls-verify)
 
 ### Assumptions
 - The tests need to have the "_test_" word in the name to distinguish them from auxiliary files. You can change the entry [here](./webpack.config.js#L8).

@@ -24,7 +24,7 @@
   },
   "scripts": {
     "playwright": "npx playwright test",
-    "k6": "npm run build && docker-compose run -T xk6-browser run --",
+    "k6": "npm run build && docker-compose run -T xk6-browser run --insecure-skip-tls-verify --",
     "build": "export NODE_OPTIONS=--openssl-legacy-provider && npx webpack"
   }
 }
