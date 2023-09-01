@@ -18,10 +18,10 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "skipLibCheck": true,
+        "baseUrl": ".",
         "paths": {
-            "@pages/*": [
-                "./pages/*"
-            ]
+            "@pages/*": ["src/pages/*"],
+            "@fixtures/*": ["src/fixtures/*"]
         }
     }
 }
